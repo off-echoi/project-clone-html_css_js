@@ -72,6 +72,7 @@
 
 /* brand_symbol */
 .brand_symbol {
+  height: 500px;
   padding-top: 60px;
   background: url('../../assets/bg_sec3.jpg') center center no-repeat;
   background-size: cover;
