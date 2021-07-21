@@ -39,6 +39,28 @@
 .brand_intro_title {
   font-size: 50px;
 }
+.brand_intro_txt_box hr {
+  position: relative;
+  width: 340px;
+  height: 45px;
+  border: none;
+  background: url('../../assets/icon_beksul_w.png') center center no-repeat;
+}
+.brand_intro_txt_box hr:after,
+.brand_intro_txt_box hr:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.brand_intro_txt_box hr:after {
+  right: 0;
+}
+.brand_intro_txt_box hr:before {
+  left: 0;
+}
 .brand_intro_sub {
   font-size: 28px;
   line-height: 1.8;
@@ -50,6 +72,41 @@
 
 /* brand_symbol */
 .brand_symbol {
+  padding-top: 60px;
   background: url('../../assets/bg_sec3.jpg') center center no-repeat;
   background-size: cover;
+  text-align: center;
+  color: #fff;
+}
+.brand_symbol h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.brand_symbol h2:after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 4px;
+  margin: 20px auto 40px;
+  background: #fff;
+}
+.brand_symbol h3 {
+  margin: 0 auto;
+  font-size: 38px;
+  font-weight: bold;
+
+  line-height: 1.4;
+}
+.brand_symbol .brand_symbol_desc {
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.brand_symbol .brand_symbol_pic_wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.brand_symbol .brand_symbol_pic {
+  flex-basis: 1;
 }
