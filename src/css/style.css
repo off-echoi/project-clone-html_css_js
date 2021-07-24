@@ -183,4 +183,19 @@
 .brand_family .family_img {
   width: 100%;
 }
+
+.brand_head_section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand_title {
+  color: #8d2125;
+  font-size: 48px;
+}
+.btn_more {
+  border-color: #8d2125;
+  background-color: #8d2125;
+}
 /* margin-top으로 맞춤 */
