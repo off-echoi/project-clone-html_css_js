@@ -1,12 +1,38 @@
+/* 공통부분  */
+.brand_head_section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.brand_title {
+  color: #8d2125;
+  font-size: 48px;
+}
+.btn_type01 {
+  border-color: #8d2125;
+  background-color: #8d2125;
+  font-family: inherit;
+  color: #fff;
+}
+.btn_more{
+
+}
 /* 헤더 */
 .header {
   position: fixed;
+  width: 100%;
+  min-width: 1380px;
+  height: 130px;
 }
 .brand {
   width: 100%;
 }
 /* kv 영역 */
 .brand_kv {
+  margin-top: 130px;
   background: url('../../assets/main/kv_brands_beksul.jpg') center center no-repeat;
   background-size: cover;
   text-align: center;
@@ -166,8 +192,11 @@
   height: 78px;
   background: url('../../assets/explain/icon_quo.png');
 }
+/* brand_family */
 .brand_family {
   position: relative;
+  max-width: 100vw;
+
 }
 .brand_family .family_title {
   position: absolute;
@@ -186,19 +215,32 @@
 .brand_family .family_img {
   width: 100%;
 }
-
-.brand_head_section {
+.brand_family .family_list{
+  position: absolute;
+  z-index: 1;
+  font-size: 20px;
+}
+/* .brand_family .family_list:nth-child(1){
+}
+.brand_family .family_list:nth-child(2){
+} */
+/* brand_product */
+.brand_product .product_list_wrap{
   display: flex;
-  width: 100%;
+  flex-wrap: wrap;
   justify-content: space-between;
+  max-width: 1140px;
+  min-width: 969px;
+  margin: 0 auto;
+}
+.brand_product .product_list{
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  width: 25%;
+  padding: 0 16px;
 }
-.brand_title {
-  color: #8d2125;
-  font-size: 48px;
-}
-.btn_more {
-  border-color: #8d2125;
-  background-color: #8d2125;
+.brand_product .product_list img{
+  width: 100%;
 }
 /* margin-top으로 맞춤 */
