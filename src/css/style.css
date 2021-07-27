@@ -1,50 +1,87 @@
-/* 공통부분  */
-.brand_head_section {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-.brand_title {
-  color: #8d2125;
-  font-size: 48px;
-}
-.btn_type01 {
-  border-color: #8d2125;
-  background-color: #8d2125;
-  font-family: inherit;
-  color: #fff;
-}
-/* .btn_more{
-
-} */
-.blind {
-  position: absolute;
+/* 스크롤 top 버튼 */
+.scroll_top {
   overflow: hidden;
+  position: absolute;
+  z-index: 50;
+  /* FIXME: 스크립트로 처리 */
+  bottom: 173px;
+  left: 50%;
+  width: 180px;
+  height: 50px;
+  transform: translate(-50%, 0);
+  transition: all 0.5s;
+}
+.scroll_top:after {
+  content: 'SCROLL DOWN';
+  position: absolute;
+  left: 47%;
+  top: 50%;
+  display: inline-block;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  font-weight: 500;
+  text-indent: 0;
+}
+.scroll_top:before {
+  content: '';
   display: block;
-  clip: rect(0 0 0 0);
-  width: 0px;
-  height: 0px;
-  text-indent: -999px;
+  position: absolute;
+  top: 35%;
+  left: calc(100% - 30px);
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  transform: rotate(-135deg);
 }
-.inner {
-  max-width: 1200px;
-  margin: 0 auto;
+.scroll_top.top {
+  position: fixed;
+  left: calc(100% - 60px);
+  top: calc(100% - 60px);
+  width: 60px;
+  height: 60px;
+  color: transparent;
+  transform: translate(0, 0);
 }
-.point_red {
-  color: #ef151e;
+.scroll_top.top:before {
+  top: 40%;
+  left: calc(50% - 7.5px);
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
 }
+
 /* 헤더 */
 .header {
   position: fixed;
+  top: 0;
+  z-index: 100;
   width: 100%;
-  min-width: 1380px;
   height: 130px;
+  background: #fff;
 }
-.brand {
-  width: 100%;
+.header_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.header_top .gnb_list {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 80px;
+}
+.header_bottom {
+  height: 50px;
+  background: #f4f4f4;
+}
+.header_bottom_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 /* kv 영역 */
 .brand_kv {
@@ -151,7 +188,6 @@
 .brand_symbol .brand_symbol_pic_wrap {
   display: flex;
   justify-content: space-between;
-  width: 1200px;
   margin: 30px auto -30px;
 }
 /* brand_history */
@@ -171,8 +207,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  width: 1200px;
-  margin: 0 auto;
 }
 .brand_explain .explain_title {
   margin-left: 10px;
@@ -243,8 +277,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1140px;
-  min-width: 969px;
   margin: 0 auto;
 }
 .brand_product .product_list {
@@ -269,7 +301,6 @@
   text-align: center;
 }
 .materials_container {
-  width: 1200px;
   height: 175px;
   margin-top: 60px;
 }
