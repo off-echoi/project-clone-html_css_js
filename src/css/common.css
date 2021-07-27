@@ -11,7 +11,57 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
+  border: 1px solid transparent;
 }
 a:focus {
   border: 1px dashed gray;
+}
+button {
+  border: none;
+}
+
+/* 공통부분  */
+.section_inner1400 {
+  width: 1400px;
+  margin: 0 auto;
+}
+.section_inner1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
+.brand {
+  width: 100%;
+}
+.brand_title {
+  color: #8d2125;
+  font-size: 48px;
+}
+.btn_type01 {
+  border-color: #8d2125;
+  background-color: #8d2125;
+  font-family: inherit;
+  color: #fff;
+}
+/* .btn_more{
+
+} */
+.blind {
+  position: absolute;
+  overflow: hidden;
+  display: block;
+  clip: rect(0 0 0 0);
+  width: 0px;
+  height: 0px;
+  text-indent: -999px;
+}
+.point_red {
+  color: #ef151e;
+}
+.brand_head_section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
