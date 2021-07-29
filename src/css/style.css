@@ -66,13 +66,32 @@
   align-items: center;
   height: 80px;
 }
-
+.header_left > * {
+  vertical-align: middle;
+}
 .header_top .gnb_list {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 18px;
+  padding-right: 18px;
   font-weight: 600;
   font-size: 17px;
   line-height: 80px;
+  letter-spacing: -0.5px;
+}
+.header_top .header_btn_list {
+  display: flex;
+}
+.header_top .bio_btn {
+  width: 100px;
+  background-image: url('../../assets/header/icon_bio.png');
+}
+.header_top .user_btn {
+  background-image: url('../../assets/header/icon_user.png');
+}
+.header_top .search_btn {
+  background-image: url('../../assets/header/icon_search.png');
+}
+.header_top .social_btn {
+  background-image: url('../../assets/header/icon_more.png');
 }
 .header_bottom {
   height: 50px;
@@ -82,6 +101,69 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header_bottom .back_btn {
+  height: 50px;
+  background-image: url('../../assets/header/icon_back.png');
+}
+.header_bottom .header_indicator {
+  display: flex;
+}
+
+.header_bottom .header_indicator li:after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  margin: 0 10px;
+  background: #999;
+}
+.header_bottom .header_indicator li:last-child:after {
+  content: none;
+}
+.header_bottom .header_indicator a {
+  font-size: 14px;
+}
+/* 메뉴 */
+.depth_menu_parent {
+  position: relative;
+}
+.depth_menu1.on + .depth_menu2 {
+  display: block;
+}
+.depth_menu2 :after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 10;
+  top: -2px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #f3f3f3;
+  border-left: solid 2px #ef151e;
+  border-top: solid 2px #ef151e;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.depth_menu2 {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 60px;
+  left: 50%;
+  padding: 10px;
+  border-top: 2px solid #ef151e;
+  background: #f3f3f3;
+  transform: translate(-50%, 0);
+}
+.fb_btn {
+  background: url('../../assets/header/icon_fb.png');
+}
+.tw_btn {
+  background: url('../../assets/header/icon_tw.png');
+}
+.url_btn {
+  background: url('../../assets/header/icon_url.png');
 }
 /* kv 영역 */
 .brand_kv {
@@ -194,8 +276,6 @@
 .brand_history {
   background: url('../../assets/history/bg_sec4.jpg');
   padding-top: 150px;
-  /* TODO:임시로 잡은 영역 */
-  height: 500px;
 }
 /* brand_explain */
 .brand_explain {
