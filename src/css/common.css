@@ -42,6 +42,15 @@ button {
   font-family: inherit;
   color: #fff;
 }
+.btn_icon {
+  overflow: hidden;
+  width: 42px;
+  height: 42px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -999px;
+}
 /* .btn_more{
 
 } */
