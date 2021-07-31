@@ -348,10 +348,46 @@
   z-index: 1;
   font-size: 20px;
 }
-/* .brand_family .family_list:nth-child(1){
+.list_flour {
+  top: 30%;
+  right: 77.5%;
 }
-.brand_family .family_list:nth-child(2){
-} */
+.list_oil {
+  top: 30%;
+  right: 57%;
+}
+.list_buhcim {
+  top: 30%;
+  right: 31.5%;
+}
+.list_mix {
+  top: 7%;
+  left: 75%;
+}
+.list_sugar {
+  top: 63%;
+  right: 80.7%;
+}
+.list_salt {
+  top: 84%;
+  right: 71.5%;
+}
+.list_vinegar {
+  top: 71%;
+  left: 28.5%;
+}
+.list_k_sauce {
+  top: 75%;
+  right: 40%;
+}
+.list_sauce {
+  top: 81%;
+  left: 63.5%;
+}
+.list_p_sauce {
+  top: 68%;
+  left: 79%;
+}
 /* brand_product */
 .brand_product .product_list_wrap {
   display: flex;
@@ -369,7 +405,24 @@
 .brand_product .product_list img {
   width: 100%;
 }
-/* margin-top으로 맞춤 */
+/* brand_media */
+.brand_media {
+}
+.media_container {
+  width: 1200px;
+  height: 500px;
+  margin-top: 60px;
+}
+.swiper-slide.media_list {
+  width: 500px;
+  height: 500px;
+}
+.media_list a {
+  width: 500px;
+  height: 500px;
+  background: url(../../assets/chanel/movie_defalt.jpg) center center no-repeat;
+  background-size: contain;
+}
 /* food_materials */
 .food_materials {
   padding: 50px 0 43px;
