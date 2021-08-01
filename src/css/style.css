@@ -3,8 +3,7 @@
   overflow: hidden;
   position: absolute;
   z-index: 50;
-  /* FIXME: 스크립트로 처리 */
-  bottom: 173px;
+  top: 724px;
   left: 50%;
   width: 180px;
   height: 50px;
@@ -274,8 +273,178 @@
 }
 /* brand_history */
 .brand_history {
-  background: url('../../assets/history/bg_sec4.jpg');
   padding-top: 150px;
+  padding-bottom: 125px;
+  text-align: center;
+  background: url('../../assets/history/bg_sec4.jpg');
+}
+.brand_history .section_inner1200 {
+  position: relative;
+  width: 940px;
+  height: 2410px;
+  margin: 0 auto;
+  background: url('../../assets/history/bg_line.png') center 500px no-repeat;
+}
+.history_list {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+}
+.list_inner {
+  position: relative;
+}
+.list_inner:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 107px;
+  height: 32px;
+  /* background-size: contain; */
+  background-position: center center;
+  background-repeat: no-repeat;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.right .list_inner:after {
+  background-image: url('../../assets/history/icon_h_right_off.png');
+}
+.left .list_inner:after {
+  background-image: url('../../assets/history/icon_h_left_off.png');
+}
+.list_inner {
+  position: relative;
+}
+.history_year {
+  margin-bottom: 20px;
+}
+.history_year strong {
+  font-size: 22px;
+  font-weight: normal;
+  color: #1e1e1e;
+  line-height: 1.4;
+}
+.history_year p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.history_1953 {
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.history_1953 .iist_inner:after {
+  content: none;
+}
+.history_1958 {
+  top: 410px;
+  left: 0;
+}
+.history_1958 .list_inner {
+  padding-left: 170px;
+}
+.history_1958 .list_inner:after {
+  top: 68px;
+  right: -169px;
+}
+.history_1958 .list_inner img:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.history_1958 .history_year {
+  margin-bottom: 30px;
+}
+.history_1965 {
+  top: 533px;
+  right: 0;
+}
+.history_1965 .list_inner {
+  padding-right: 220px;
+}
+.history_1965 .list_inner img:last-child {
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+.history_1965 .list_inner:after {
+  left: -140px;
+}
+.history_1979 {
+  top: 675px;
+  left: 119px;
+}
+.history_1979 .history_year p {
+  margin-bottom: 10px;
+}
+.history_1979 .list_inner {
+  padding-left: 110px;
+}
+.history_1979 .list_inner:after {
+  right: -170px;
+}
+.history_1979 .list_inner img:first-of-type {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.history_2004 {
+  top: 937px;
+  right: 165px;
+}
+.history_2004 .list_inner:after {
+  left: -150px;
+}
+
+.history_2011_center {
+  top: 1230px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.history_2011_center .list_inner:after {
+  width: 32px;
+  top: -55px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-image: url('../../assets/history/icon_h_center_off.png');
+}
+.history_2011_center img {
+  margin-bottom: 20px;
+}
+.history_2011_center .history_year {
+  line-height: 1.6;
+}
+.history_2011 {
+  bottom: 590px;
+  left: 120px;
+}
+
+.history_2011 .list_inner:after {
+  right: -184px;
+}
+.history_2015 {
+  bottom: 370px;
+  right: 180px;
+}
+.history_2015 .list_inner:after {
+  top: 78px;
+  left: -130px;
+}
+.history_2017 {
+  bottom: 235px;
+  left: 160px;
+}
+.history_2017 .list_inner:after {
+  right: -210px;
+}
+.history_2018 {
+  bottom: 87px;
+  right: 157px;
+}
+.history_2018 .list_inner:after {
+  left: -130px;
 }
 /* brand_explain */
 .brand_explain {
@@ -392,21 +561,40 @@
 .brand_product .product_list_wrap {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 auto;
+  margin: 0 -20px;
 }
 .brand_product .product_list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25%;
-  padding: 0 16px;
+  width: 20%;
+  padding: 0 16px 30px;
 }
 .brand_product .product_list img {
   width: 100%;
 }
+.brand_product span {
+  margin-top: 25px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.7;
+}
+.brand_product .prodect_more {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.brand_product .prodect_more:after {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 14px;
+  background: url('../../assets/product/icon_href.gif') center center no-repeat;
+  vertical-align: top;
+}
 /* brand_media */
 .brand_media {
+  padding-bottom: 60px;
 }
 .media_container {
   width: 1200px;
@@ -421,7 +609,11 @@
   width: 500px;
   height: 500px;
   background: url(../../assets/chanel/movie_defalt.jpg) center center no-repeat;
-  background-size: contain;
+  background-size: 102%;
+  transition: background-size 0.2s;
+}
+.media_list a:hover {
+  background-size: 110%;
 }
 /* food_materials */
 .food_materials {
