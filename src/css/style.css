@@ -175,6 +175,7 @@
   min-width: 960px;
   max-height: 644px;
 }
+
 /* brand_intro */
 .brand_intro {
   padding: 80px;
@@ -247,10 +248,12 @@
   font-size: 18px;
   font-weight: bold;
 }
+.brand_symbol h2 span {
+  display: inline-block;
+}
 .brand_symbol h2:after {
   content: '';
   display: block;
-  width: 36px;
   height: 4px;
   margin: 20px auto 40px;
   background: #fff;
@@ -271,6 +274,7 @@
   justify-content: space-between;
   margin: 30px auto -30px;
 }
+
 /* brand_history */
 .brand_history {
   padding-top: 150px;

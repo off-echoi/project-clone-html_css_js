@@ -25,6 +25,27 @@ function scrollToTopFn() {
   });
 }
 
+// 화면 로드 시 kv 나타나는 효과 : 임시 TEST
+function sectionAnimate() {
+  const sectionKv = document.querySelector('.brand_kv');
+  const sectionIntro = document.querySelector('.brand_intro');
+  const sectionSymbol = document.querySelector('.brand_symbol');
+
+  function showContent() {
+    let top = window.scrollY;
+    sectionKv.classList.add('animate');
+
+    if (top > sectionKv.offsetTop / 3) {
+      sectionIntro.classList.add('animate');
+    }
+    if (top > sectionSymbol.offsetTop - (sectionKv.offsetTop + sectionKv.clientHeight - 50)) {
+      sectionSymbol.classList.add('animate');
+    }
+  }
+  window.addEventListener('scroll', showContent);
+  window.addEventListener('load', showContent);
+}
+
 // media_container media 스와이퍼 테스트
 const swiper1 = new Swiper('.media_container', {
   loop: true,
@@ -58,6 +79,7 @@ const swiper2 = new Swiper('.materials_container', {
 function init() {
   scrollTopBtnLocation();
   scrollToTopFn();
+  sectionAnimate();
 }
 
 init();

@@ -1,0 +1,67 @@
+/* kv 영역 */
+.brand_kv {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.brand_kv.animate {
+  opacity: 1;
+}
+.brand_kv img {
+  transform: translateY(90px);
+  transition: transform 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.brand_kv.animate img {
+  transform: translateY(0);
+}
+/* brand_intro */
+.brand_intro {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.brand_intro.animate {
+  opacity: 1;
+}
+.brand_intro .brand_intro_txt_box {
+  transform: translateY(90px);
+  transition: transform ease-in-out 0.6s;
+}
+.brand_intro.animate .brand_intro_txt_box {
+  transform: translateY(0);
+}
+/* brand_symbol */
+.brand_symbol h2 span {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s, transform 0.7s;
+  transition-delay: 0.3s;
+}
+.brand_symbol.animate h2 span {
+  opacity: 1;
+  transform: translateY(0);
+}
+.brand_symbol h2:after {
+  width: 0;
+  transition: width 0.4s;
+}
+.brand_symbol.animate h2:after {
+  width: 36px;
+}
+.brand_symbol .brand_symbol_pic_wrap li {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.5s;
+}
+.brand_symbol .brand_symbol_pic_wrap li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.brand_symbol .brand_symbol_pic_wrap li:nth-child(3) {
+  transition-delay: 0.4s;
+}
+.brand_symbol .brand_symbol_pic_wrap li:nth-child(4) {
+  transition-delay: 0.6s;
+}
+.brand_symbol.animate .brand_symbol_pic_wrap li {
+  opacity: 1;
+  transform: translateY(0);
+}
