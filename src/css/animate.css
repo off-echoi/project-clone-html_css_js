@@ -1,67 +1,42 @@
-/* kv 영역 */
-.brand_kv {
+/* 
+ * 모션 공통클래스
+ * ** 부모 
+ * .inview_section: 모션을 줄 요소 상위의 부모 클래스
+ * .is_inview: 해당 클래스 사용 시 모션 실행
+ * ** 자식 = 모션 대상
+ * .inview_el: 초기 모션 대기 상태 - 모션이 들어갈 요소의 클래스
+ * .el_0n: 직접 모션의 들어갈 요소에 딜레이가 필요한 경우 추가 02, 04, 06, 08 각가 딜레이 시간을 의미
+*/
+.inview_section .inview_el {
   opacity: 0;
-  transition: opacity 0.3s;
+  transform: translateY(20px);
+  transition: opacity ease-in-out 0.4s, transform ease-in-out 0.4s;
 }
-.brand_kv.animate {
+.inview_section .inview_el.el_02 {
+  transition-delay: 0.2s;
+}
+.inview_section .inview_el.el_04 {
+  transition-delay: 0.4s;
+}
+.inview_section .inview_el.el_06 {
+  transition-delay: 0.6s;
+}
+.inview_section .inview_el.el_08 {
+  transition-delay: 0.8s;
+}
+.inview_section.is_inview .inview_el {
   opacity: 1;
-}
-.brand_kv img {
-  transform: translateY(90px);
-  transition: transform 0.4s;
-  transition-timing-function: ease-in-out;
-}
-.brand_kv.animate img {
   transform: translateY(0);
 }
+
 /* brand_intro */
-.brand_intro {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.brand_intro.animate {
-  opacity: 1;
-}
-.brand_intro .brand_intro_txt_box {
-  transform: translateY(90px);
-  transition: transform ease-in-out 0.6s;
-}
-.brand_intro.animate .brand_intro_txt_box {
-  transform: translateY(0);
-}
+/* TODO: hr 관련 효과 넣기 */
+
 /* brand_symbol */
-.brand_symbol h2 span {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s, transform 0.7s;
-  transition-delay: 0.3s;
-}
-.brand_symbol.animate h2 span {
-  opacity: 1;
-  transform: translateY(0);
-}
 .brand_symbol h2:after {
   width: 0;
   transition: width 0.4s;
 }
-.brand_symbol.animate h2:after {
+.brand_symbol h2.inview_section.is_inview:after {
   width: 36px;
-}
-.brand_symbol .brand_symbol_pic_wrap li {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.5s;
-}
-.brand_symbol .brand_symbol_pic_wrap li:nth-child(2) {
-  transition-delay: 0.2s;
-}
-.brand_symbol .brand_symbol_pic_wrap li:nth-child(3) {
-  transition-delay: 0.4s;
-}
-.brand_symbol .brand_symbol_pic_wrap li:nth-child(4) {
-  transition-delay: 0.6s;
-}
-.brand_symbol.animate .brand_symbol_pic_wrap li {
-  opacity: 1;
-  transform: translateY(0);
 }
