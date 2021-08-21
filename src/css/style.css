@@ -166,6 +166,7 @@
 }
 /* kv 영역 */
 .brand_kv {
+  min-height: 644px;
   margin-top: 130px;
   background: url('../../assets/main/kv_brands_beksul.jpg') center center no-repeat;
   background-size: cover;
