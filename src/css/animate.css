@@ -24,6 +24,15 @@
 .inview_section .inview_el.el_08 {
   transition-delay: 0.8s;
 }
+.inview_section .inview_el.el_10 {
+  transition-delay: 1s;
+}
+.inview_section .inview_el.el_12 {
+  transition-delay: 1.2s;
+}
+.inview_section .inview_el.el_14 {
+  transition-delay: 1.4s;
+}
 .inview_section.is_inview .inview_el {
   opacity: 1;
   transform: translateY(0);
