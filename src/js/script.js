@@ -25,74 +25,75 @@ function scrollGoTop() {
   })
 }
 
-// 화면 로드 시 나타나는 효과 : FIXME: 스크롤 잘 안맞는 부분 수정
+// 화면 로드 시 나타나는 효과
 function sectionAnimate() {
   const IS_INVIEW = 'is_inview'
   const inviewSection = [...document.querySelectorAll('.inview_section')]
 
   let sectionTopArray = []
+  inviewSection[0].classList.add(IS_INVIEW)
   function calcContent() {
-    inviewSection[0].classList.add(IS_INVIEW)
     let _sectionTopArray = []
     inviewSection.forEach((section) => {
-      _sectionTopArray.push(section.getBoundingClientRect().top + window.scrollY)
+      _sectionTopArray.push(section.getBoundingClientRect().top + window.scrollY - 400)
     })
+
     return _sectionTopArray
   }
   sectionTopArray = calcContent()
   function showContent() {
-    let top = window.scrollY
-    // console.log(sectionTopArray)
+    let _top = window.scrollY
 
     sectionTopArray.forEach((topValue, i, array) => {
       if (i + 1 !== array.length) {
-        if (Number(top) > Number(topValue) - 200 && Number(top) < Number(array[i + 1]) - 200) {
-          // console.log(top, topValue)
+        if (Number(_top) > Number(topValue) && Number(_top) < Number(array[i + 1])) {
           inviewSection[i].classList.add(IS_INVIEW)
         }
-      } else {
-        console.log('>>')
-        // inviewSection[i].classList.add(IS_INVIEW)
+      } else if (Number(_top) > Number(topValue)) {
+        inviewSection[i].classList.add(IS_INVIEW)
       }
     })
   }
   window.addEventListener('scroll', showContent)
 }
 
-// media_container media 스와이퍼 테스트
-const swiper1 = new Swiper('.media_container', {
-  loop: true,
-  centeredSlides: true,
-  slidesPerView: 'auto',
-  spaceBetween: 30,
-  pagination: {
-    el: '.media_pagination',
-    renderCustom: function (swiper, current, total) {
-      return `<div>${current} / ${total}</div>`
+function swipers() {
+  // media_container media 스와이퍼 테스트
+  const swiper1 = new Swiper('.media_container', {
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    pagination: {
+      el: '.media_pagination',
+      renderCustom: function (swiper, current, total) {
+        return `<div>${current} / ${total}</div>`
+      },
+      type: 'custom',
     },
-    type: 'custom',
-  },
-})
+  })
 
-// food_materials 요리재료 스와이퍼 테스트
-const swiper2 = new Swiper('.materials_container', {
-  // loop: true,
-  slidesPerView: 5,
-  slidesPerGroup: 5,
-  loopFillGroupWithBlank: true,
-  pagination: {
-    el: '.swiper-pagination',
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-})
+  // food_materials 요리재료 스와이퍼 테스트
+  const swiper2 = new Swiper('.materials_container', {
+    // loop: true,
+    slidesPerView: 5,
+    slidesPerGroup: 5,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  })
+}
 
 function init() {
   scrollTopBtnLocation()
   scrollGoTop()
   sectionAnimate()
+  swipers()
 }
 
-init()
+window.addEventListener('load', init)
