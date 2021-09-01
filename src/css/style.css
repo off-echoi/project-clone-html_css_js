@@ -52,7 +52,8 @@
 
 /* 헤더 */
 .header {
-  position: fixed;
+  /* position: fixed; */
+  position: sticky;
   top: 0;
   z-index: 100;
   width: 100%;
@@ -93,6 +94,7 @@
   background-image: url('../../assets/header/icon_more.png');
 }
 .header_bottom {
+  min-width: 1440px;
   height: 50px;
   background: #f4f4f4;
 }
@@ -167,7 +169,6 @@
 /* kv 영역 */
 .brand_kv {
   min-height: 644px;
-  margin-top: 130px;
   background: url('../../assets/main/kv_brands_beksul.jpg') center center no-repeat;
   background-size: cover;
   text-align: center;
@@ -316,6 +317,12 @@
 .left .list_inner:after {
   background-image: url('../../assets/history/icon_h_left_off.png');
 }
+.right.on .list_inner:after {
+  background-image: url('../../assets/history/icon_h_right_on.png');
+}
+.left.on .list_inner:after {
+  background-image: url('../../assets/history/icon_h_left_on.png');
+}
 .list_inner {
   position: relative;
 }
@@ -414,6 +421,9 @@
   left: 50%;
   transform: translate(-50%, 0);
   background-image: url('../../assets/history/icon_h_center_off.png');
+}
+.history_2011_center.on .list_inner:after {
+  background-image: url('../../assets/history/icon_h_center_on.png');
 }
 .history_2011_center img {
   margin-bottom: 20px;
@@ -633,6 +643,22 @@
 .media_list a:hover {
   background-size: 110%;
 }
+.brand_media .swiper-pagination-custom {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 500px;
+  padding: 0 20px 30px 0;
+  text-align: right;
+  transform: translate(-50%, 0);
+}
+.media_pagination {
+  font-size: 30px;
+  color: #fff;
+}
+.media_pagination .current_page {
+  font-size: 40px;
+}
 /* food_materials */
 .food_materials {
   padding: 50px 0 43px;
@@ -648,6 +674,9 @@
   position: relative;
   height: 175px;
   margin-top: 60px;
+}
+.materials_container .swiper-slide.materials_list {
+  /* width: auto; */
 }
 .materials_list a {
   position: relative;
@@ -708,6 +737,20 @@
 .materials_container .swiper-button-prev.swiper-button-disabled {
   pointer-events: painted;
 }
+.materials_container .materials_pagination {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  left: auto;
+  width: 36px;
+  height: 36px;
+  padding-right: 8px;
+  background: #fff;
+  line-height: 35px;
+  font-size: 14px;
+  text-align: right;
+}
+
 /* footer */
 .footer {
   width: 100%;
