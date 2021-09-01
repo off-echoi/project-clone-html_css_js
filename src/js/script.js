@@ -32,15 +32,7 @@ function sectionAnimate() {
 
   let sectionTopArray = []
   inviewSection[0].classList.add(IS_INVIEW)
-  function calcContent() {
-    let _sectionTopArray = []
-    inviewSection.forEach((section) => {
-      _sectionTopArray.push(section.getBoundingClientRect().top + window.scrollY - 400)
-    })
-
-    return _sectionTopArray
-  }
-  sectionTopArray = calcContent()
+  sectionTopArray = calcContent(inviewSection)
   function showContent() {
     let _top = window.scrollY
 
@@ -57,9 +49,35 @@ function sectionAnimate() {
   window.addEventListener('scroll', showContent)
 }
 
+// 히스토리 영역 백설 아이콘 on/off 전환
+function iconOnOff() {
+  const IS_ON = 'on'
+  const historySections = [...document.querySelectorAll('.history_list')]
+  let sectionTopArray = []
+  sectionTopArray = calcContent(historySections)
+  function iconState() {
+    let _top = window.scrollY
+    sectionTopArray.forEach((topValue, i, array) => {
+      if (i + 1 !== array.length) {
+        if (Number(_top) > Number(topValue) && Number(_top) < Number(array[i + 1])) {
+          historySections[i].classList.add(IS_ON)
+        } else {
+          historySections[i].classList.remove(IS_ON)
+        }
+      } else {
+        if (Number(_top) > Number(topValue)) {
+          historySections[i].classList.add(IS_ON)
+        } else {
+          historySections[i].classList.remove(IS_ON)
+        }
+      }
+    })
+  }
+  window.addEventListener('scroll', iconState)
+}
 function swipers() {
   // media_container media 스와이퍼 테스트
-  const swiper1 = new Swiper('.media_container', {
+  const media_swiper = new Swiper('.media_container', {
     loop: true,
     centeredSlides: true,
     slidesPerView: 'auto',
@@ -67,26 +85,34 @@ function swipers() {
     pagination: {
       el: '.media_pagination',
       renderCustom: function (swiper, current, total) {
-        return `<div>${current} / ${total}</div>`
+        return `<div> <span class="current_page"> ${current} </span> / ${total}</div>`
       },
       type: 'custom',
     },
   })
 
   // food_materials 요리재료 스와이퍼 테스트
-  const swiper2 = new Swiper('.materials_container', {
-    // loop: true,
+  const materials_swiper = new Swiper('.materials_container', {
+    loop: false,
     slidesPerView: 5,
     slidesPerGroup: 5,
-    loopFillGroupWithBlank: true,
     pagination: {
-      el: '.swiper-pagination',
+      el: '.materials_pagination',
+      renderCustom: function (swiper, current, total) {
+        return `<div> ${current}/${total}</div>`
+      },
+      type: 'custom',
     },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
   })
+  materials_swiper.appendSlide([
+    '<li class="swiper-slide materials_list"></li>',
+    '<li class="swiper-slide materials_list"></li>',
+    '<li class="swiper-slide materials_list"></li>',
+  ])
 }
 
 function init() {
@@ -94,6 +120,7 @@ function init() {
   scrollGoTop()
   sectionAnimate()
   swipers()
+  iconOnOff()
 }
 
 window.addEventListener('load', init)
