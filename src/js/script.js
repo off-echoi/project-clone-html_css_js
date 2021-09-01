@@ -1,3 +1,31 @@
+// 뎁스 메뉴 호버 효과
+function menuHover() {}
+// 토글 효과
+function toggleEvent() {
+  const toggleBtns = [...document.querySelectorAll(`[data-role="btn_toggle"]`)]
+
+  function toggle(e) {
+    e.stopPropagation()
+
+    if (this.classList.contains('on')) {
+      this.classList.remove('on')
+    } else {
+      this.classList.add('on')
+    }
+  }
+  toggleBtns.forEach((btn, i) => {
+    btn.addEventListener('click', toggle)
+  })
+  const body = document.querySelector('body')
+
+  body.addEventListener('click', function (e) {
+    e.preventDefault()
+    toggleBtns.forEach((btn, i) => {
+      btn.classList.remove('on')
+    })
+  })
+}
+
 // 스크롤시 탑 버튼 모양,위치 변화(클래스 추가)
 function scrollTopBtnLocation() {
   const scrollTopBtn = document.querySelector('.scroll_top')
@@ -75,6 +103,7 @@ function iconOnOff() {
   }
   window.addEventListener('scroll', iconState)
 }
+// 미디어, 요리재료 스와이퍼
 function swipers() {
   // media_container media 스와이퍼 테스트
   const media_swiper = new Swiper('.media_container', {
@@ -114,8 +143,8 @@ function swipers() {
     '<li class="swiper-slide materials_list"></li>',
   ])
 }
-
 function init() {
+  toggleEvent()
   scrollTopBtnLocation()
   scrollGoTop()
   sectionAnimate()
