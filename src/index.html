@@ -37,9 +37,7 @@
         </nav>
         <ul class="header_btn_list">
           <li>
-            <button class="bio_btn btn_icon">
-              <i>CJ BIO</i>
-            </button>
+            <button class="bio_btn btn_icon">CJ BIO</button>
           </li>
           <li>
             <button class="user_btn btn_icon">
@@ -47,14 +45,10 @@
             </button>
           </li>
           <li>
-            <button class="search_btn btn_icon">
-              <i>검색</i>
-            </button>
+            <button class="search_btn btn_icon" data-popup-target="search_popup" data-role="btn_popup">검색</button>
           </li>
           <li class="depth_menu_parent">
-            <button class="social_btn btn_icon depth_menu1" data-role="btn_toggle">
-              <i>SNS 공유</i>
-            </button>
+            <button class="social_btn btn_icon depth_menu1" data-role="btn_toggle">SNS 공유</button>
             <ul class="depth_menu2">
               <li class="fb_btn">
                 <button class="btn_icon">페이스북</button>
@@ -548,13 +542,12 @@
     </footer>
     <!-- 검색 팝업 -->
     <div class="dim">
-      <div class="popup_content">
-        <button class="popup_close_btn">팝업 닫기</button>
-        <div>
-          <label for="">
-            <input type="text" name="" id="" />
-          </label>
-          <button>검색</button>
+      <div class="popup_content" data-popup-id="search_popup" data-role="popup_content">
+        <button class="popup_close_btn btn_icon" data-role="btn_popup_close" data-popup-target="search_popup">팝업 닫기</button>
+        <div class="serach_area">
+          <label for="search" class="blind"> 통합검색 </label>
+          <input class="serach_text" type="text" name="search" id="search" placeholder="검색어를 입력해주세요" />
+          <button class="pop_search_btn btn_icon">검색</button>
         </div>
       </div>
     </div>
