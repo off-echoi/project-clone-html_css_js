@@ -6,7 +6,6 @@ function toggleEvent() {
 
   function toggle(e) {
     e.stopPropagation()
-
     if (this.classList.contains('on')) {
       this.classList.remove('on')
     } else {
@@ -16,11 +15,10 @@ function toggleEvent() {
   toggleBtns.forEach((btn, i) => {
     btn.addEventListener('click', toggle)
   })
-  const body = document.querySelector('body')
+  const _body = document.querySelector('body')
 
-  body.addEventListener('click', function (e) {
-    e.preventDefault()
-    toggleBtns.forEach((btn, i) => {
+  _body.addEventListener('click', function () {
+    toggleBtns.forEach((btn) => {
       btn.classList.remove('on')
     })
   })
@@ -143,6 +141,32 @@ function swipers() {
     '<li class="swiper-slide materials_list"></li>',
   ])
 }
+// 팝업 동작
+function popup() {
+  const _body = document.querySelector('body')
+  const dim = document.querySelector('.dim')
+  const popupBtns = [...document.querySelectorAll(`[data-role="btn_popup"]`)]
+  const popupCloseBtns = [...document.querySelectorAll(`[data-role="btn_popup_close"]`)]
+
+  function popupOpen() {
+    document.querySelector(`[data-popup-id="${this.dataset.popupTarget}"]`).classList.add('on')
+    dim.classList.add('on')
+    _body.setAttribute('style', 'overflow: hidden')
+  }
+  function popupClose() {
+    document.querySelector(`[data-popup-id="${this.dataset.popupTarget}"]`).classList.remove('on')
+    dim.classList.remove('on')
+    _body.setAttribute('style', 'overflow: auto')
+  }
+
+  popupBtns.forEach((btn) => {
+    btn.addEventListener('click', popupOpen)
+  })
+  popupCloseBtns.forEach((btn) => {
+    btn.addEventListener('click', popupClose)
+  })
+}
+
 function init() {
   toggleEvent()
   scrollTopBtnLocation()
@@ -150,6 +174,7 @@ function init() {
   sectionAnimate()
   swipers()
   iconOnOff()
+  popup()
 }
 
 window.addEventListener('load', init)
