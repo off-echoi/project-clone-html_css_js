@@ -1,3 +1,5 @@
+import {calcContent} from './modules.js'
+
 // 뎁스 메뉴 호버 효과
 function menuHover() {}
 // 토글 효과
