@@ -8,8 +8,10 @@ function toggleEvent() {
     e.stopPropagation()
     if (this.classList.contains('on')) {
       this.classList.remove('on')
+      this.setAttribute(`aria-expand`, 'false')
     } else {
       this.classList.add('on')
+      this.setAttribute(`aria-expand`, 'true')
     }
   }
   toggleBtns.forEach((btn, i) => {
@@ -103,7 +105,7 @@ function iconOnOff() {
 }
 // 미디어, 요리재료 스와이퍼
 function swipers() {
-  // media_container media 스와이퍼 테스트
+  // media_container media 스와이퍼
   const media_swiper = new Swiper('.media_container', {
     loop: true,
     centeredSlides: true,
@@ -118,7 +120,7 @@ function swipers() {
     },
   })
 
-  // food_materials 요리재료 스와이퍼 테스트
+  // food_materials 요리재료 스와이퍼
   const materials_swiper = new Swiper('.materials_container', {
     loop: false,
     slidesPerView: 5,
@@ -149,12 +151,29 @@ function popup() {
   const popupCloseBtns = [...document.querySelectorAll(`[data-role="btn_popup_close"]`)]
 
   function popupOpen() {
-    document.querySelector(`[data-popup-id="${this.dataset.popupTarget}"]`).classList.add('on')
+    const popupContent = document.querySelector(`[data-popup-id="${this.dataset.popup}"]`)
+    popupContent.classList.add('on')
+    this.blur()
+    // 크롬focus안되는 이슈 해결
+    setTimeout(function () {
+      popupContent.focus()
+    }, 1)
+    this.setAttribute(`aria-expand`, 'true')
+    // 팝업에서 포커스 빠지지 않는 코드 - 포커스 뒤로 이동 방지
+    window.addEventListener('keydown', (e) => {
+      if (document.activeElement === document.querySelector(`[data-role="popup_focus"]`)) {
+        popupContent.focus()
+      }
+    })
     dim.classList.add('on')
     _body.setAttribute('style', 'overflow: hidden')
   }
   function popupClose() {
-    document.querySelector(`[data-popup-id="${this.dataset.popupTarget}"]`).classList.remove('on')
+    const popupContent = document.querySelector(`[data-popup-id="${this.dataset.popup}"]`)
+    const popupBUtton = document.querySelector(`[data-popup ="${this.dataset.popup}"]`)
+    popupContent.classList.remove('on')
+    popupBUtton.setAttribute(`aria-expand`, 'false')
+    popupBUtton.focus()
     dim.classList.remove('on')
     _body.setAttribute('style', 'overflow: auto')
   }
