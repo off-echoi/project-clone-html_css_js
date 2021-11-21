@@ -40,7 +40,7 @@
         </nav>
         <ul class="header_btn_list">
           <li>
-            <button class="bio_btn btn_icon">CJ BIO</button>
+            <button class="bio_btn btn_icon" tabindex="0">CJ BIO</button>
           </li>
           <li>
             <button class="user_btn btn_icon">
@@ -48,10 +48,21 @@
             </button>
           </li>
           <li>
-            <button class="search_btn btn_icon" data-popup-target="search_popup" data-role="btn_popup">검색</button>
+            <button
+              class="search_btn btn_icon"
+              tabindex="0"
+              data-popup="search_popup"
+              data-role="btn_popup"
+              aria-haspopup="dialog"
+              aria-expand="false"
+            >
+              검색
+            </button>
           </li>
           <li class="depth_menu_parent">
-            <button class="social_btn btn_icon depth_menu1" data-role="btn_toggle">SNS 공유</button>
+            <button class="social_btn btn_icon depth_menu1" tabindex="0" data-role="btn_toggle" aria-haspopup="true" aria-expand="false">
+              SNS 공유
+            </button>
             <ul class="depth_menu2">
               <li class="fb_btn">
                 <button class="btn_icon">페이스북</button>
@@ -293,58 +304,58 @@
           <li class="product_list inview_el">
             <a href="#">
               <img src="../assets/product/product01.png" alt="" />
+              <span>백설 설탕/올리고당</span>
+              <span class="prodect_more">View More</span>
             </a>
-            <span>백설 설탕/올리고당</span>
-            <a href="#" class="prodect_more">View More</a>
           </li>
           <li class="product_list inview_el el_02">
             <a href="#">
               <img src="../assets/product/product02.png" alt="" />
+              <span>백설 밀가루</span>
+              <span class="prodect_more">View More</span>
             </a>
-            <span>백설 밀가루</span>
-            <a href="#" class="prodect_more">View More</a>
           </li>
           <li class="product_list inview_el el_04">
             <a href="#">
               <img src="../assets/product/product03.png" alt="" />
+              <span>백설 식용유</span>
+              <span class="prodect_more">View More</span>
             </a>
-            <span>백설 식용유</span>
-            <a href="#" class="prodect_more">View More</a>
           </li>
           <li class="product_list inview_el el_06">
             <a href="#">
               <img src="../assets/product/product04.png" alt="" />
+              <span>백설 참기름</span>
+              <span href="#" class="prodect_more">View More</span>
             </a>
-            <span>백설 참기름</span>
-            <a href="#" class="prodect_more">View More</a>
           </li>
           <li class="product_list inview_el el_08">
             <a href="#">
               <img src="../assets/product/product05.png" alt="" />
+              <span>백설 식초</span>
+              <span href="#" class="prodect_more">View More</span>
             </a>
-            <span>백설 식초</span>
-            <a href="#" class="prodect_more">View More</a>
           </li>
           <li class="product_list inview_el el_10">
             <a href="#">
               <img src="../assets/product/product06.png" alt="" />
+              <span>백설 양념장</span>
+              <span href="#" class="prodect_more">View More</span>
             </a>
-            <span>백설 양념장</span>
-            <a href="#" class="prodect_more">View More</a>
           </li>
           <li class="product_list inview_el el_12">
             <a href="#">
               <img src="../assets/product/product07.png" alt="" />
+              <span>백설 소스</span>
+              <span href="#" class="prodect_more">View More</span>
             </a>
-            <span>백설 소스</span>
-            <a href="#" class="prodect_more">View More</a>
           </li>
           <li class="product_list inview_el el_14">
             <a href="#">
               <img src="../assets/product/product08.png" alt="" />
+              <span>백설 컵전</span>
+              <span href="#" class="prodect_more">View More</span>
             </a>
-            <span>백설 컵전</span>
-            <a href="#" class="prodect_more">View More</a>
           </li>
         </ul>
       </div>
@@ -359,19 +370,13 @@
         <div class="swiper-container media_container">
           <ul class="swiper-wrapper media_list_wrap">
             <li class="swiper-slide media_list inview_el">
-              <a href="#">
-                <span class="blind"> 동영상이동 </span>
-              </a>
+              <a href="#" aria-label="동영상이동"> </a>
             </li>
             <li class="swiper-slide media_list inview_el el_02">
-              <a href="#">
-                <span class="blind"> 동영상이동 </span>
-              </a>
+              <a href="#" aria-label="동영상이동"> </a>
             </li>
             <li class="swiper-slide media_list inview_el el_04">
-              <a href="#">
-                <span class="blind"> 동영상이동 </span>
-              </a>
+              <a href="#" aria-label="동영상이동"> </a>
             </li>
           </ul>
           <div class="swiper-pagination media_pagination"></div>
@@ -470,16 +475,14 @@
         </ul>
         <div class="swiper-pagination materials_pagination"></div>
 
-        <div class="swiper-button-prev materials_prev"></div>
-        <div class="swiper-button-next materials_next"></div>
+        <button class="swiper-button-prev materials_prev" aria-label="요리재료 이전 슬라이드"></button>
+        <button class="swiper-button-next materials_next" aria-label="요리재료 이후 슬라이드"></button>
       </div>
     </section>
     <!-- scroll_top - toggle class : .top -->
-    <a class="scroll_top btn_type01" href="#">
-      <span class="blind"> 맨위로 </span>
-    </a>
+    <a class="scroll_top btn_type01" href="#" aria-label="맨위로 이동"></a>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
       <div class="section_inner1200 footer_inner">
         <article class="footer_right">
           <ul class="footer_guide footer_list">
@@ -546,14 +549,16 @@
     </footer>
     <!-- 검색 팝업 -->
     <div class="dim">
-      <div class="popup_content" data-popup-id="search_popup" data-role="popup_content">
-        <button class="popup_close_btn btn_icon" data-role="btn_popup_close" data-popup-target="search_popup">팝업 닫기</button>
+      <section class="popup_content" tabindex="0" data-popup-id="search_popup" data-role="popup_content" role="dialog">
+        <h1 class="blind">통함검색</h1>
+        <button class="popup_close_btn btn_icon" data-role="btn_popup_close" data-popup="search_popup">팝업 닫기</button>
         <div class="serach_area">
           <label for="search" class="blind"> 통합검색 </label>
           <input class="serach_text" type="text" name="search" id="search" placeholder="검색어를 입력해주세요" />
-          <button class="pop_search_btn btn_icon">검색</button>
+          <button class="pop_search_btn btn_icon" tabindex="0">검색</button>
         </div>
-      </div>
+      </section>
+      <div tabindex="0" data-role="popup_focus" role="none presentation"></div>
     </div>
   </body>
 </html>
