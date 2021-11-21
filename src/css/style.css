@@ -1,3 +1,21 @@
+/* skip-content */
+.skip_content {
+  position: fixed;
+  top: -30px;
+  left: 0;
+  z-index: 110;
+  width: 100%;
+  height: 30px;
+  color: #fff;
+  background: #000;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
+}
+.skip_content:active,
+.skip_content:focus {
+  top: 0;
+}
 /* 스크롤 top 버튼 */
 .scroll_top {
   overflow: hidden;
@@ -5,6 +23,7 @@
   z-index: 50;
   top: 727px;
   left: 50%;
+  display: block;
   width: 180px;
   height: 50px;
   transform: translate(-50%, 0);
@@ -18,8 +37,10 @@
   display: inline-block;
   width: 100%;
   transform: translate(-50%, -50%);
+  font-size: 12px;
   font-weight: 500;
   text-indent: 0;
+  text-align: center;
 }
 .scroll_top:before {
   content: '';

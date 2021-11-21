@@ -1,7 +1,5 @@
-import {calcContent} from './modules.js'
+import { calcContent } from './modules.js'
 
-// 뎁스 메뉴 호버 효과
-function menuHover() {}
 // 토글 효과
 function toggleEvent() {
   const toggleBtns = [...document.querySelectorAll(`[data-role="btn_toggle"]`)]
@@ -169,6 +167,8 @@ function popup() {
   })
 }
 
+// 뎁스 메뉴 호버 효과
+// function menuHover() {}
 function init() {
   toggleEvent()
   scrollTopBtnLocation()

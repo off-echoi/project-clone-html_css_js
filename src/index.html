@@ -15,6 +15,9 @@
     <script type="module" src="js/script.js"></script>
   </head>
   <body>
+    <a href="#brabdIntro" tabindex="0" data-role="skip_content" class="skip_content">
+      <span>본문으로 건너뛰기</span>
+    </a>
     <header class="header">
       <div class="header_top section_inner1400">
         <div class="header_left">
@@ -77,7 +80,7 @@
     <section class="brand brand_kv inview_section">
       <img src="../assets/main/logo_beksul.png" alt="백설 로고" class="inview_el" />
     </section>
-    <section class="brand brand_intro inview_section">
+    <section class="brand brand_intro inview_section" id="brabdIntro">
       <div class="brand_intro_inner">
         <div class="brand_intro_txt_box inview_el">
           <h1 class="brand_intro_title">즐거운 요리일상, 백설</h1>
@@ -472,9 +475,10 @@
       </div>
     </section>
     <!-- scroll_top - toggle class : .top -->
-    <button class="scroll_top btn_type01">
+    <a class="scroll_top btn_type01" href="#">
       <span class="blind"> 맨위로 </span>
-    </button>
+    </a>
+
     <footer class="footer">
       <div class="section_inner1200 footer_inner">
         <article class="footer_right">
