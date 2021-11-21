@@ -619,10 +619,12 @@
   width: 100%;
 }
 .brand_product span {
+  display: block;
   margin-top: 25px;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.7;
+  text-align: center;
 }
 .brand_product .prodect_more {
   margin-top: 10px;
@@ -635,10 +637,10 @@
   width: 30px;
   height: 14px;
   background: url('../../assets/product/icon_href.gif') center center no-repeat;
-  vertical-align: top;
+  vertical-align: middle;
 }
-/* brand_media */
 
+/* brand_media */
 .brand_media {
   margin-top: 100px;
   padding-bottom: 60px;
@@ -863,13 +865,13 @@
   left: 0;
   right: 0;
   display: none;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   width: 100%;
   min-width: 700px;
   height: 80px;
   background: #f3f3f3;
+}
+.popup_content:focus {
+  border: 1px solid #333;
 }
 .popup_content.on {
   display: block;
