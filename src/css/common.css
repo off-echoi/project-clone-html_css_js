@@ -16,14 +16,14 @@ a {
   color: inherit;
   border: 1px solid transparent;
 }
-a:focus {
+a:focus,
+button:focus {
   border: 1px dashed gray;
 }
 button {
   border: none;
   cursor: pointer;
 }
-
 /* 공통부분  */
 .section_inner1400 {
   width: 1400px;
