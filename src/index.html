@@ -16,9 +16,10 @@
     <script type="module" src="./js/script.js"></script>
   </head>
   <body>
-    <a href="#brabdIntro" tabindex="0" data-role="skip_content" class="skip_content">
+    <a href="#brabdIntro" data-role="skip_content" class="skip_content" role="button">
       <span>본문으로 건너뛰기</span>
     </a>
+
     <header class="header">
       <div class="header_top section_inner1400">
         <div class="header_left">
@@ -41,7 +42,7 @@
         </nav>
         <ul class="header_btn_list">
           <li>
-            <button class="bio_btn btn_icon" tabindex="0">CJ BIO</button>
+            <button class="bio_btn btn_icon">CJ BIO</button>
           </li>
           <li>
             <button class="user_btn btn_icon">
@@ -49,22 +50,13 @@
             </button>
           </li>
           <li>
-            <button
-              class="search_btn btn_icon"
-              tabindex="0"
-              data-popup="search_popup"
-              data-role="btn_popup"
-              aria-haspopup="dialog"
-              aria-expand="false"
-            >
+            <button class="search_btn btn_icon" data-popup="search_popup" data-role="btn_popup" aria-haspopup="dialog" aria-expand="false">
               검색
             </button>
           </li>
           <li class="depth_menu_parent">
-            <button class="social_btn btn_icon depth_menu1" tabindex="0" data-role="btn_toggle" aria-haspopup="true" aria-expand="false">
-              SNS 공유
-            </button>
-            <ul class="depth_menu2">
+            <button class="social_btn btn_icon depth_menu1" data-role="btn_toggle" aria-haspopup="true" aria-expand="false">SNS 공유</button>
+            <ul class="depth_menu2" role="navigation">
               <li class="fb_btn">
                 <button class="btn_icon">페이스북</button>
               </li>
@@ -481,7 +473,7 @@
       </div>
     </section>
     <!-- scroll_top - toggle class : .top -->
-    <a class="scroll_top btn_type01" href="#" aria-label="맨위로 이동"></a>
+    <button href="#" class="scroll_top btn_type01" aria-label="맨위로 이동"></button>
 
     <footer class="footer" role="contentinfo">
       <div class="section_inner1200 footer_inner">
