@@ -1,0 +1,59 @@
+/* Noto Sana */
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: local('NotoSansKR-Light.otf'), url('../../font/NotoSansKR-Light.otf') format('opentype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: local('NotoSansKR-Medium.otf'), url('../../font/NotoSansKR-Medium.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: local('NotoSansKR-Regular.otf'), url('../../font/NotoSansKR-Regular.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: local('NotoSansKR-Bold.otf'), url('../../font/NotoSansKR-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: bold;
+}
+
+/* Montserrat */
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat-Light.otf'), url('../../font/Montserrat-Light.otf') format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat-Medium.otf'), url('../../font/Montserrat-Medium.otf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat-Regular.otf'), url('../../font/Montserrat-Regular.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat-Bold.otf'), url('../../font/Montserrat-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: bold;
+}
+
+* {
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+}
