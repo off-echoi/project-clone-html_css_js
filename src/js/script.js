@@ -167,7 +167,7 @@ function popup() {
           popupContent.focus()
         }
       }
-      //
+      // esc키 눌렀을때 창 닫힘
       if (e.key === 'Escape') {
         popupClose(name)
       }
