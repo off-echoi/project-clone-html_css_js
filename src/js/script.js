@@ -150,44 +150,50 @@ function popup() {
   const popupBtns = [...document.querySelectorAll(`[data-role="btn_popup"]`)]
   const popupCloseBtns = [...document.querySelectorAll(`[data-role="btn_popup_close"]`)]
 
-  function popupOpen() {
-    const popupContent = document.querySelector(`[data-popup-id="${this.dataset.popup}"]`)
+  function popupOpen(name) {
+    const popupContent = document.querySelector(`[data-popup-id="${name}"]`)
+    const popupButton = document.querySelector(`[data-popup ="${name}"]`)
     popupContent.classList.add('on')
-    this.blur()
+    popupButton.blur()
     // 크롬focus안되는 이슈 해결
     setTimeout(function () {
       popupContent.focus()
     }, 1)
-    this.setAttribute(`aria-expand`, 'true')
-    // 팝업에서 포커스 빠지지 않는 코드 - 포커스 뒤로 이동 방지
+    popupButton.setAttribute(`aria-expand`, 'true')
     window.addEventListener('keydown', (e) => {
-      if (document.activeElement === document.querySelector(`[data-role="popup_focus"]`)) {
-        popupContent.focus()
+      // 팝업에서 포커스 빠지지 않는 코드 - 포커스 본문이동 방지
+      if (e.key === 'Tab') {
+        if (document.activeElement === document.querySelector(`[data-role="popup_focus"]`)) {
+          popupContent.focus()
+        }
+      }
+      //
+      if (e.key === 'Escape') {
+        popupClose(name)
       }
     })
     dim.classList.add('on')
     _body.setAttribute('style', 'overflow: hidden')
   }
-  function popupClose() {
-    const popupContent = document.querySelector(`[data-popup-id="${this.dataset.popup}"]`)
-    const popupBUtton = document.querySelector(`[data-popup ="${this.dataset.popup}"]`)
+
+  function popupClose(name) {
+    const popupContent = document.querySelector(`[data-popup-id="${name}"]`)
+    const popupButton = document.querySelector(`[data-popup ="${name}"]`)
     popupContent.classList.remove('on')
-    popupBUtton.setAttribute(`aria-expand`, 'false')
-    popupBUtton.focus()
+    popupButton.setAttribute(`aria-expand`, 'false')
+    popupButton.focus()
     dim.classList.remove('on')
     _body.setAttribute('style', 'overflow: auto')
   }
 
   popupBtns.forEach((btn) => {
-    btn.addEventListener('click', popupOpen)
+    btn.addEventListener('click', (e) => popupOpen(e.target.dataset.popup))
   })
   popupCloseBtns.forEach((btn) => {
-    btn.addEventListener('click', popupClose)
+    btn.addEventListener('click', (e) => popupClose(e.target.dataset.popup))
   })
 }
 
-// 뎁스 메뉴 호버 효과
-// function menuHover() {}
 function init() {
   toggleEvent()
   scrollTopBtnLocation()
