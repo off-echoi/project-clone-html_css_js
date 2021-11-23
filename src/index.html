@@ -23,34 +23,42 @@
     <header class="header">
       <div class="header_top section_inner1400">
         <div class="header_left">
-          <a href="#">
+          <a href="#" aria-label="cj제일제당 홈페이지로 이동">
             <img src="../assets/header/logo_cj.png" alt="cj제일제당 로고" />
           </a>
-          <select name="" id="" class="lang">
+          <label for="lang" class="blind">홈페이지 언어 선택</label>
+          <select name="lang" id="lang" class="lang">
             <option value="KR">KR</option>
             <option value="EN">EN</option>
             <option value="CN">CN</option>
           </select>
         </div>
         <nav class="gnb">
-          <a href="#" class="gnb_list">ABOUT</a>
-          <a href="#" class="gnb_list">INNOVATION</a>
-          <a href="#" class="gnb_list">BRANDS</a>
-          <a href="#" class="gnb_list">SUSTAINABILITY</a>
-          <a href="#" class="gnb_list">K-FOOD LIFE</a>
-          <a href="#" class="gnb_list">SUPPORT</a>
+          <a href="#" role="buton" class="gnb_list" aria-label="ABOUT 메뉴 버튼">ABOUT</a>
+          <a href="#" role="buton" class="gnb_list" aria-label="INNOVATION 메뉴 버튼">INNOVATION</a>
+          <a href="#" role="buton" class="gnb_list" aria-label="BRANDS 메뉴 버튼">BRANDS</a>
+          <a href="#" role="buton" class="gnb_list" aria-label="SUSTAINABILITY 메뉴 버튼">SUSTAINABILITY</a>
+          <a href="#" role="buton" class="gnb_list" aria-label="K-FOOD LIFE 메뉴 버튼">K-FOOD LIFE</a>
+          <a href="#" role="buton" class="gnb_list" aria-label="SUPPORT 메뉴 버튼">SUPPORT</a>
         </nav>
         <ul class="header_btn_list">
           <li>
-            <button class="bio_btn btn_icon">CJ BIO</button>
+            <a class="bio_btn btn_icon" href="#" aria-label="CJ BIO 새창으로 이동" target="_blank" rel="noreferer noopener">CJ BIO</a>
           </li>
           <li>
-            <button class="user_btn btn_icon">
+            <button class="user_btn btn_icon" aria-label="USER 페이지로 이동">
               <i>USER</i>
             </button>
           </li>
           <li>
-            <button class="search_btn btn_icon" data-popup="search_popup" data-role="btn_popup" aria-haspopup="dialog" aria-expand="false">
+            <button
+              class="search_btn btn_icon"
+              data-popup="search_popup"
+              data-role="btn_popup"
+              aria-haspopup="dialog"
+              aria-expand="false"
+              aria-label="통합 검색"
+            >
               검색
             </button>
           </li>
@@ -58,13 +66,13 @@
             <button class="social_btn btn_icon depth_menu1" data-role="btn_toggle" aria-haspopup="true" aria-expand="false">SNS 공유</button>
             <ul class="depth_menu2" role="navigation">
               <li class="fb_btn">
-                <button class="btn_icon">페이스북</button>
+                <button class="btn_icon" aria-label="페이스북에 공유하기">페이스북</button>
               </li>
               <li class="tw_btn">
-                <button class="btn_icon">트위터</button>
+                <button class="btn_icon" aria-label="트위터에 공유하기">트위터</button>
               </li>
               <li class="url_btn">
-                <button class="btn_icon">URL</button>
+                <button class="btn_icon" aria-label="url 공유하기">URL</button>
               </li>
             </ul>
           </li>
@@ -73,18 +81,20 @@
       <div class="header_bottom">
         <div class="header_bottom_inner section_inner1400">
           <button class="back_btn btn_icon">뒤로가기</button>
-          <ul class="header_indicator">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">BRANDS</a></li>
-            <li><a href="#">백설</a></li>
+          <span class="blind" id="page_indicator">현재 페이지 경로 정보</span>
+          <ul class="header_indicator" aria-labelledby="page_indicator">
+            <li><a href="#" aria-label="HOME으로 이동">HOME</a></li>
+            <li><a href="#" aria-label="BRANDS관으로 이동">BRANDS</a></li>
+            <li><a href="#" aria-label="백설페이지 이동">백설</a></li>
           </ul>
         </div>
       </div>
     </header>
     <section class="brand brand_kv inview_section">
+      <h2 class="blind">백설 브랜드 메인 이미지</h2>
       <img src="../assets/main/logo_beksul.png" alt="백설 로고" class="inview_el" />
     </section>
-    <section class="brand brand_intro inview_section" id="brabdIntro">
+    <section class="brand brand_intro inview_section" id="brabdIntro" aria-label="백설 브랜드 소개">
       <div class="brand_intro_inner">
         <div class="brand_intro_txt_box inview_el">
           <h1 class="brand_intro_title">즐거운 요리일상, 백설</h1>
@@ -136,6 +146,7 @@
       </div>
     </section>
     <section class="brand brand_history">
+      <h2 class="blind">백설의 역사</h2>
       <ul class="section_inner1200">
         <li class="history_list history_1953 inview_section">
           <div class="list_inner">
@@ -319,35 +330,35 @@
             <a href="#">
               <img src="../assets/product/product04.png" alt="" />
               <span>백설 참기름</span>
-              <span href="#" class="prodect_more">View More</span>
+              <span class="prodect_more">View More</span>
             </a>
           </li>
           <li class="product_list inview_el el_08">
             <a href="#">
               <img src="../assets/product/product05.png" alt="" />
               <span>백설 식초</span>
-              <span href="#" class="prodect_more">View More</span>
+              <span class="prodect_more">View More</span>
             </a>
           </li>
           <li class="product_list inview_el el_10">
             <a href="#">
               <img src="../assets/product/product06.png" alt="" />
               <span>백설 양념장</span>
-              <span href="#" class="prodect_more">View More</span>
+              <span class="prodect_more">View More</span>
             </a>
           </li>
           <li class="product_list inview_el el_12">
             <a href="#">
               <img src="../assets/product/product07.png" alt="" />
               <span>백설 소스</span>
-              <span href="#" class="prodect_more">View More</span>
+              <span class="prodect_more">View More</span>
             </a>
           </li>
           <li class="product_list inview_el el_14">
             <a href="#">
               <img src="../assets/product/product08.png" alt="" />
               <span>백설 컵전</span>
-              <span href="#" class="prodect_more">View More</span>
+              <span class="prodect_more">View More</span>
             </a>
           </li>
         </ul>
@@ -363,13 +374,19 @@
         <div class="swiper-container media_container">
           <ul class="swiper-wrapper media_list_wrap">
             <li class="swiper-slide media_list inview_el">
-              <a href="#" aria-label="동영상이동"> </a>
+              <a href="#" aria-label="동영상이동">
+                <!-- 동영상 영역 -->
+              </a>
             </li>
             <li class="swiper-slide media_list inview_el el_02">
-              <a href="#" aria-label="동영상이동"> </a>
+              <a href="#" aria-label="동영상이동">
+                <!-- 동영상 영역 -->
+              </a>
             </li>
             <li class="swiper-slide media_list inview_el el_04">
-              <a href="#" aria-label="동영상이동"> </a>
+              <a href="#" aria-label="동영상이동">
+                <!-- 동영상 영역 -->
+              </a>
             </li>
           </ul>
           <div class="swiper-pagination media_pagination"></div>
@@ -473,11 +490,12 @@
       </div>
     </section>
     <!-- scroll_top - toggle class : .top -->
-    <button href="#" class="scroll_top btn_type01" aria-label="맨위로 이동"></button>
+    <button class="scroll_top btn_type01" aria-label="맨위로 이동"></button>
 
     <footer class="footer" role="contentinfo">
       <div class="section_inner1200 footer_inner">
         <article class="footer_right">
+          <h3 class="blind">CJ제일제당 사이트 이용 정보</h3>
           <ul class="footer_guide footer_list">
             <li><a href="#" class="point_red">개인정보처리방침</a></li>
             <li><a href="#">지속가능경영</a></li>
@@ -496,6 +514,7 @@
             <li><a href="#">CJ도너스캠프</a></li>
             <li><a href="#">CJ THE MARKET</a></li>
           </ul>
+          <h3 class="blind">CJ제일제당 정보</h3>
           <ul class="footer_info">
             <li>씨제이제일제당(주)</li>
             <li>서울특별시 중구 동호로 330 CJ 제일제당센터 (우)04560</li>
@@ -508,12 +527,14 @@
           <p class="footer_copyright">©2019 CJ CHEILJEDANG CORP. ALL RIGHTS RESERVED</p>
         </article>
         <article class="footer_left">
-          <select name="" id="">
-            <option value="">FAMILY SITE</option>
-            <option value="">FAMILY SITE</option>
-            <option value="">FAMILY SITE</option>
-            <option value="">FAMILY SITE</option>
+          <label for="familySite" class="blind">페밀리 사이트 이동</label>
+          <select name="familySite" id="familySite">
+            <option value="code01">FAMILY SITE</option>
+            <option value="code02">FAMILY SITE</option>
+            <option value="code03">FAMILY SITE</option>
+            <option value="code04">FAMILY SITE</option>
           </select>
+          <span class="blind">백설 sns 가기</span>
           <ul class="footer_sns">
             <li>
               <a href="#">
@@ -544,9 +565,9 @@
     <div class="dim">
       <section class="popup_content" tabindex="0" data-popup-id="search_popup" data-role="popup_content" role="dialog">
         <h1 class="blind">통함검색</h1>
-        <button class="popup_close_btn btn_icon" data-role="btn_popup_close" data-popup="search_popup">팝업 닫기</button>
+        <button class="popup_close_btn btn_icon" data-role="btn_popup_close" data-popup="search_popup">검색 팝업 닫기</button>
         <div class="serach_area">
-          <label for="search" class="blind"> 통합검색 </label>
+          <label for="search" class="blind"> 통합검색 키워드</label>
           <input class="serach_text" type="text" name="search" id="search" placeholder="검색어를 입력해주세요" />
           <button class="pop_search_btn btn_icon" tabindex="0">검색</button>
         </div>
